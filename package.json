@@ -1,0 +1,54 @@
+{
+    "name": "hbq-weex-utils",
+    "version": "0.0.1",
+    "description": "hbq-weex-utils",
+    "main": "build/index.js",
+    "scripts": {
+        "build:rollup": "rimraf releases && rollup -c",
+        "build": "rimraf dist && webpack --config webpack.config.js --mode=development --progress",
+        "build:prod": "rimraf dist && webpack --config webpack.config.js --mode=production --progress",
+        "start:build": "npm run tsc && node build",
+        "start": "node run",
+        "test": "mocha src/**/*.test.ts",
+        "clear": "rimraf build",
+        "tsc": "npm run clear && tsc",
+        "tsc:w": "npm run clear && tsc -w",
+        "p": "npm run tsc && npm publish",
+        "lint": "tslint \"src/**/*.ts\""
+    },
+    "dependencies": {
+        "tslib": "^1.6.1"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.41",
+        "@types/node": "^6.0.48",
+        "@types/should": "^8.3.0",
+        "mocha": "^3.3.0",
+        "rimraf": "^2.6.2",
+        "rollup": "^0.68.2",
+        "rollup-plugin-babel": "^4.1.0",
+        "rollup-plugin-clear": "^2.0.7",
+        "rollup-plugin-commonjs": "^9.2.0",
+        "rollup-plugin-license": "^0.7.0",
+        "rollup-plugin-typescript": "^1.0.0",
+        "rollup-plugin-typescript2": "^0.18.1",
+        "rollup-plugin-uglify": "^6.0.0",
+        "should": "^11.2.1",
+        "ts-loader": "^5.3.2",
+        "ts-node": "^3.0.2",
+        "tslint": "^5.1.0",
+        "typescript": "^3.2.2",
+        "webpack": "^4.28.2",
+        "webpack-cli": "^3.1.2"
+    },
+    "keywords": [
+        "typescript",
+        "hbq-weex-utils"
+    ],
+    "author": "hubiqing",
+    "repository": "https://github.com/githbq/hbq-module-boilerplate.git",
+    "engines": {
+        "node": ">=7.6"
+    },
+    "license": "MIT"
+}
